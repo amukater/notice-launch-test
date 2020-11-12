@@ -6,11 +6,18 @@
   <title>Document</title>
 </head>
 <body>
-  <button id="a" onClick="test()">Button</button>
+  <button onclick="openAppOrStore(event)" url="kakeruplus://apply-event?event-id=wi20">Button</button>
 
   <script>
-    function test() {
-      location.href = "kakeruplus://apply-event?event-id=wi20"
+    function openAppOrStore(e) {
+      let storeURL = "https://apps.apple.com/jp/app/id1477580400";
+      let appURL = e.target.getAttribute('url');
+      location.href = appURL;
+      setTimeout(function() {
+        if (window.confirm("ストアページを開きます。よろしいですか？")) {
+          location.href = storeURL;
+        }
+      }, 500);
     }
   </script>
 </body>
