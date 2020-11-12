@@ -14,9 +14,10 @@
       let appURL = e.target.getAttribute('url');
       location.href = appURL;
       setTimeout(function() {
-        if (window.confirm("ストアページを開きます。よろしいですか？")) {
-          location.href = storeURL;
-        }
+        location.href = storeURL;
+        // if (window.confirm("ストアページを開きます。よろしいですか？")) {
+        //   location.href = storeURL;
+        // }
       }, 500);
     }
   </script>
